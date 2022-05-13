@@ -69,7 +69,7 @@ class ScreenHome extends StatelessWidget {
               return InkWell(
                 onTap: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (ctx) => ScreenView()));
+                      .push(MaterialPageRoute(builder: (ctx) => ScreenView(index: data[index].key,)));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(10),

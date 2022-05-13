@@ -41,7 +41,7 @@ class _ScreenAddState extends State<ScreenAdd> {
 
   Future getImage() async {
     final ImagePicker image = ImagePicker();
-    _image = await image.pickImage(source: ImageSource.gallery);
+    _image = await image.pickImage(source: ImageSource.camera);
     if (_image != null) {
       setState(() {});
       _imagePath = _image!.path;
