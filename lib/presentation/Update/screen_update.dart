@@ -99,7 +99,22 @@ class _ScreenUpdateState extends State<ScreenUpdate> {
             ),
             Stack(
               children: [
-                Align(
+                _image == null
+                    ? Align(
+                        alignment: Alignment.topCenter,
+                        child: SizedBox(
+                          height: 40.w,
+                          width: 40.w,
+                          child: ClipRRect(
+                            borderRadius: commonRadius,
+                            child: Image.asset(
+                              'assets/images/profile.jpeg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      )
+                    :Align(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
                     height: 40.w,
