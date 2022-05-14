@@ -41,7 +41,7 @@ class _ScreenAddState extends State<ScreenAdd> {
 
   Future getImage() async {
     final ImagePicker image = ImagePicker();
-    _image = await image.pickImage(source: ImageSource.camera);
+    _image = await image.pickImage(source: ImageSource.gallery);
     if (_image != null) {
       setState(() {});
       _imagePath = _image!.path;
@@ -52,6 +52,7 @@ class _ScreenAddState extends State<ScreenAdd> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+      
       onWillPop: () async {
         
           Student student = Student(
@@ -70,6 +71,11 @@ class _ScreenAddState extends State<ScreenAdd> {
       },
       child: Scaffold(
         appBar: AppBar(
+          leading: InkWell(
+            onTap: (){
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back)),
           backgroundColor: mainThemeColor,
           title: const AppBarTitle(title: 'Add Student'),
           centerTitle: true,

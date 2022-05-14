@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-Color mainThemeColor = const Color.fromARGB(255, 39, 1, 93);
+Color mainThemeColor = Color.fromARGB(255, 1, 44, 93);
 const Color white = Colors.white70;
 const Color black = Colors.black54;
 Color scaffoldBackground = const Color.fromARGB(255, 220, 210, 234);
