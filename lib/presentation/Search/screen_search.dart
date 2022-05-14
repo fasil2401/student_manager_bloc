@@ -37,6 +37,8 @@ class ScreenSearch extends StatelessWidget {
                 children: [
                   InkWell(
                       onTap: () {
+                         _searchController.clear();
+                        context.read<SearchBloc>().add(ClearInput());
                         Navigator.of(context).pop();
                       },
                       child: Icon(
@@ -296,7 +298,7 @@ class ScreenSearch extends StatelessWidget {
                       );
                     } else {
                       return Center(
-                        child: CircularProgressIndicator(),
+                        child: NameText(name: 'No data Found'),
                       );
                     }
                   },
