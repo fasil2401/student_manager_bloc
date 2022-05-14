@@ -33,7 +33,7 @@ class StudentManager extends StatelessWidget {
           providers: [
             BlocProvider(
                 create: (context) => StudentCubit(
-                    list: Services().getStudents(), searchBloc: SearchBloc())),
+                    list: Services().getStudents(), searchBloc: searchBloc)),
             BlocProvider(create: (context) => searchBloc),
           ],
           child: MaterialApp(

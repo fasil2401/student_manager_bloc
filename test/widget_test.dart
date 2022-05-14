@@ -14,7 +14,7 @@ import 'package:student_manager_bloc/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget( StudentManager(searchBloc: SearchBloc(),));
+    await tester.pumpWidget( StudentManager());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

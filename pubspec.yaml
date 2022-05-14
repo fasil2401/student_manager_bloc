@@ -32,8 +32,9 @@ dependencies:
   sizer: ^2.0.15
   path_provider: ^2.0.9
   image_picker: ^0.8.4+8
-  flutter_bloc:
-  equatable:
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  equatable: ^2.0.3
   hive:
   hive_flutter:
 
