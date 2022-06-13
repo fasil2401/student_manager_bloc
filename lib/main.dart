@@ -21,8 +21,8 @@ void main() async {
 }
 
 class StudentManager extends StatelessWidget {
-  final SearchBloc searchBloc;
-  const StudentManager({Key? key, required this.searchBloc}) : super(key: key);
+  final SearchBloc? searchBloc;
+  const StudentManager({Key? key, this.searchBloc}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -32,9 +32,10 @@ class StudentManager extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-                create: (context) => StudentCubit(
-                    list: Services().getStudents(), searchBloc: searchBloc)),
-            BlocProvider(create: (context) => searchBloc),
+              create: (context) => StudentCubit(
+                  list: Services().getStudents(), searchBloc: searchBloc!),
+            ),
+            BlocProvider(create: (context) => searchBloc!),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

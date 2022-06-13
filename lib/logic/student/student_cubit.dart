@@ -18,7 +18,7 @@ class StudentCubit extends Cubit<StudentState> {
   StudentCubit({required this.list,required this.searchBloc}) : super(StudentInitial()){
     emit(LoadedListState(studentList: list));
     streamSubscription = searchBloc.stream.listen((event) {
-      print('object--------');
+      
         if(event is SearchResult){
           if(event.studentList.isNotEmpty){
             studentListUpdated(event.studentList);
