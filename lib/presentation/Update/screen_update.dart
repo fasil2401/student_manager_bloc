@@ -86,6 +86,7 @@ class _ScreenUpdateState extends State<ScreenUpdate> {
         
         return true;
       },
+      
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: mainThemeColor,

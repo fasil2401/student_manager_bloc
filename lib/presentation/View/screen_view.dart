@@ -24,74 +24,82 @@ class ScreenView extends StatelessWidget {
         backgroundColor: mainThemeColor,
         title: const AppBarTitle(title: 'View Details'),
       ),
-      body: Stack(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
 
-        children: [
-          Container(
-            height: 30.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: mainThemeColor,
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50),bottomRight: Radius.circular(50))
+          children: [
+            Container(
+              height: 30.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: mainThemeColor,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50),bottomRight: Radius.circular(50))
+              ),
             ),
-          ),
-          
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 20.h),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  backgroundColor: mainThemeColor,
-                  radius: 22.w,
-                  child: student.imagePath == null ?CircleAvatar(
-                    radius: 19.w,
-                    backgroundImage: const AssetImage(
-                      'assets/images/profile.jpeg',
-                    ),
-                  ): CircleAvatar(
-                    radius: 19.w,
-                    backgroundImage:  FileImage(
-                      File(student.imagePath),
-                    ),
+            
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.w,),
+              child: Padding(
+                padding:  EdgeInsets.only(top: 20.h),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: mainThemeColor,
+                        radius: 22.w,
+                        child: student.imagePath == null ?CircleAvatar(
+                          radius: 19.w,
+                          backgroundImage: const AssetImage(
+                            'assets/images/profile.jpeg',
+                          ),
+                        ): CircleAvatar(
+                          radius: 19.w,
+                          backgroundImage:  FileImage(
+                            File(student.imagePath),
+                          ),
+                        ),
+                      ),
+                      commonSpace3,
+                      CustomText(
+                        text: student.name,
+                        color: Colors.black,
+                        size: 30.sp,
+                        weight: FontWeight.bold,
+                      ),
+                      commonSpace1,
+                      CustomText(
+                        text: 'Age : ${student.age} years',
+                        size: 18.sp,
+                        weight: FontWeight.w600,
+                      ),
+                      commonSpace1,
+                      CustomText(
+                        text: 'Class : ${student.standard} th std',
+                        size: 18.sp,
+                        weight: FontWeight.w600,
+                      ),
+                      commonSpace1,
+                      CustomText(
+                        text: 'School : ${student.school}',
+                        size: 18.sp,
+                        weight: FontWeight.w600,
+                      ),
+                      commonSpace1,
+                      CustomText(
+                        text: 'Place : ${student.place}',
+                        size: 18.sp,
+                        weight: FontWeight.w600,
+                      ),
+                      commonSpace1,
+                    ],
                   ),
                 ),
-                commonSpace3,
-                CustomText(
-                  text: student.name,
-                  color: Colors.black,
-                  size: 30.sp,
-                  weight: FontWeight.bold,
-                ),
-                commonSpace1,
-                CustomText(
-                  text: 'Age : ${student.age} years',
-                  size: 18.sp,
-                  weight: FontWeight.w600,
-                ),
-                commonSpace1,
-                CustomText(
-                  text: 'Class : ${student.standard} th std',
-                  size: 18.sp,
-                  weight: FontWeight.w600,
-                ),
-                commonSpace1,
-                CustomText(
-                  text: 'School : ${student.school}',
-                  size: 18.sp,
-                  weight: FontWeight.w600,
-                ),
-                commonSpace1,
-                CustomText(
-                  text: 'Place : ${student.place}',
-                  size: 18.sp,
-                  weight: FontWeight.w600,
-                ),
-                commonSpace1,
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
