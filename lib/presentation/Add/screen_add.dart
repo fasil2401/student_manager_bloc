@@ -71,11 +71,11 @@ class _ScreenAddState extends State<ScreenAdd> {
       },
       child: Scaffold(
         appBar: AppBar(
-          leading: InkWell(
-            onTap: (){
-              Navigator.of(context).pop();
-            },
-            child: Icon(Icons.arrow_back)),
+          // leading: InkWell(
+          //   onTap: (){
+          //     Navigator.of(context).pop();
+          //   },
+          //   child: Icon(Icons.arrow_back)),
           backgroundColor: mainThemeColor,
           title: const AppBarTitle(title: 'Add Student'),
           centerTitle: true,
